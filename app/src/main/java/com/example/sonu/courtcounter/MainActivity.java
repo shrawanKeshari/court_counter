@@ -61,11 +61,6 @@ public class MainActivity extends AppCompatActivity {
         displayTeamA(scoreTeamA);
     }
 
-    private void displayTeamA(int i) {
-        TextView scoreTextView = (TextView) findViewById(R.id.score_text_view_A);
-        scoreTextView.setText(String.valueOf(i));
-    }
-
     public void threePointsB(View view) {
         scoreTeamB = scoreTeamB + 3;
         displayTeamB(scoreTeamB);
@@ -79,6 +74,18 @@ public class MainActivity extends AppCompatActivity {
     public void freeThrowB(View view) {
         scoreTeamB = scoreTeamB + 1;
         displayTeamB(scoreTeamB);
+    }
+
+    public void resetScore(View view) {
+        scoreTeamA = 0;
+        scoreTeamB = 0;
+        displayTeamA(scoreTeamA);
+        displayTeamB(scoreTeamB);
+    }
+
+    private void displayTeamA(int i) {
+        TextView scoreTextView = (TextView) findViewById(R.id.score_text_view_A);
+        scoreTextView.setText(String.valueOf(i));
     }
 
     private void displayTeamB(int i) {
